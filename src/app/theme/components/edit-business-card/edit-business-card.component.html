@@ -1,0 +1,135 @@
+<div class="main-edit-business-container">
+  <!-- ed = "edit" -->
+  <div class="ed-header">
+
+    <div class="w-90 h-100" style="padding-top: 15px; padding-left: 20px">
+      <label class="ed-title">Editar Empresa</label>
+    </div>
+
+    <div class="ed-exit-container">
+      <button class="ed-exit-button flap-i fg-e900 "
+              (click)="onExit()"></button>
+    </div>
+
+  </div>
+
+  <div style="border: 1px solid #DDDDDD; width: 100%"></div>
+
+  <div class="ed-body">
+
+    <label class="ed-body-title">Llena los siguientes datos para dar de alta el cliente</label>
+
+    <div class="ed-input-container">
+
+      <label class="ed-input-text" >Nombre comercial</label>
+
+      <input
+        [(ngModel)]="dataSource.nameCompany"
+        class="ed-input"/>
+
+    </div>
+
+
+
+    <div class="ed-input-container">
+
+      <label class="ed-input-text" >Razón Social</label>
+
+      <input
+        [(ngModel)]="dataSource.businessName"
+        [type]="type"
+        [ngClass]="hasError? 'error' : ''"
+        [autocomplete]="autocomplete"
+        [name]="name"
+        [placeholder]="placeholder"
+
+        class="ed-input"/>
+
+    </div>
+
+    <div class="ed-input-container">
+
+      <label class="ed-input-text" >Dirección</label>
+
+      <input
+        [(ngModel)]="dataSource.address"
+        [type]="type"
+        [ngClass]="hasError? 'error' : ''"
+        [autocomplete]="autocomplete"
+        [name]="name"
+        [placeholder]="placeholder"
+
+        class="ed-input"/>
+
+    </div>
+
+    <div class="ed-double-input-container">
+
+
+      <div class="w-50 h-100 d-flex" style="flex-direction: column">
+
+        <label class="ed-input-text" >Télefono</label>
+
+        <div class="w-90 h-100 d-flex justify-content-space-between" style="align-items:center; border: 1px solid #DDDDDD; border-radius: 20px; padding-left: 10px;">
+          <img alt src="https://th.bing.com/th/id/R.d3fba8d3962a3b0b25d7398b669bd251?rik=wlLqMuFYYZ9whg&riu=http%3a%2f%2fimagenpng.com%2fwp-content%2fuploads%2f2015%2f09%2f1250168327.jpg&ehk=LXJnZPJp2mswCcGsxPXvLgsruydem8YzCW%2bJ44I5jg4%3d&risl=&pid=ImgRaw&r=0"
+               style="width: 25px; height: 15px; top:10px;">
+          <input
+            [(ngModel)]="dataSource.telephoneNumber"
+            type="number"
+            maxlength="10"
+            [ngClass]="hasError? 'error' : ''"
+            [autocomplete]="autocomplete"
+            [name]="name"
+            [placeholder]="placeholder"
+            class="ed-phone-input"/>
+        </div>
+
+      </div>
+
+      <div class="w-50 h-100 d-flex" style="flex-direction: column">
+
+        <label class="ed-input-text">Tipo</label>
+
+        <div class="w-70 h-100 d-flex" style="padding-right: 10px; border: 1px solid #DDDDDD; border-radius: 20px">
+          <select class="ed-selector" [(ngModel)]="dataSource.typeCompany"  >
+            <option value="Restaurante">Restaurante</option>
+            <option value="Transporte">Transporte</option>
+          </select>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="ed-input-container">
+
+      <label class="ed-input-text" >Contacto principal</label>
+
+      <input
+        [(ngModel)]="dataSource.nameContact"
+        [type]="type"
+        [ngClass]="hasError? 'error' : ''"
+        [autocomplete]="autocomplete"
+        [name]="name"
+        [placeholder]="placeholder"
+
+        class="ed-input"/>
+
+    </div>
+
+    <div class="ed-buttons-container">
+
+      <div class="w-40 h-40">
+        <button  class="ed-cancel-button" (click)="onExit()">Cancelar</button>
+      </div>
+
+      <div class="w-40 h-40">
+        <button  class="edit-button" (click)="onEditClicked()">Editar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

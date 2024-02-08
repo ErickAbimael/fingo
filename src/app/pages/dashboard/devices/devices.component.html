@@ -1,0 +1,63 @@
+<!-- DV = Devices -->
+<div class="DV-absolute-banner">
+
+  <div class="DV-content-banner">
+    <div class="DV-header-container">
+
+      <div class="DV-header-title-container">
+
+        <label class="DV-title-text">Dispositivos</label>
+
+      </div>
+
+    <div class="DV-header-buttons">
+
+      <div class="DV-add-button-container">
+
+        <button (click)="onAddNewDevice()" class="DV-add-button">
+           + Agregar Dispositivo
+        </button>
+
+      </div>
+
+    </div>
+
+    </div>
+
+      <fg-table-component
+        [dataSource]="dataSource"
+        [columnDef]="columnToFill"
+        (isEditBusinessShowing)="onOpenEditDeviceWindow($event)"
+        (isDeleteBusinessShowing)="onOpenDeleteDeviceWindow($event)">
+      </fg-table-component>
+  </div>
+
+  <div *ngIf="isAddNewDeviceShowing" class="DV-fix-container animated fadeIn">
+    <fg-add-device-card
+      (onCloseModal)="onCloseAddDeviceWindow()"
+      (object)="onCreateNewDevice($event)"
+    ></fg-add-device-card>
+  </div>
+
+  <div *ngIf="isEditDeviceModalShowing" class="DV-fix-container animated fadeIn">
+    <fg-edit-device-card
+      (onCloseModal)="onCloseEditDeviceWindow()"
+      (object)="onUpdateDevice($event)"
+      [dataToFill]="infoToEdit"
+    ></fg-edit-device-card>
+  </div>
+
+  <div *ngIf="isDeleteDeviceModalShowing" class="DV-fix-container-center animated fadeIn">
+    <fg-delete-device-card
+      (onCloseWindow)="onCloseDeleteDeviceWindow()"
+      (onDelete)="onDeleteDevice()"
+    ></fg-delete-device-card>
+  </div>
+
+  <div id="deviceCreated">Dispositivo creado con éxito</div>
+  <div id="deviceEdited">Dispositivo editado con éxito</div>
+  <div id="deviceDeleted">Dispositivo eliminado con éxito</div>
+  <div *ngIf="isLoading" class="DV-fix-container-center"><span class="loader"></span></div>
+
+</div>
+

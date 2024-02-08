@@ -1,0 +1,31 @@
+$base_color       : #ffffff;
+$primary_color    : #F68827;
+$secondary_color  : #06B2BC;
+$tint_color       : #003192;
+$font_color       : #343434;
+$red_color        : #ed2020;
+$border_color     : #bbbbbb;
+$border_alt       : #f3f6f6;
+$icons_color      : #7d7d7d;
+$layout_bg        : #f9f9f9;
+$border_card      : #DDDDDD;
+$grayText         : #7d7d7d;
+
+
+$light :  (
+  primaryColor: $primary_color,
+  backgroundLayout: $layout_bg,
+  background: $base_color,
+  borderFocus: $tint_color,
+  border: $border_color,
+  borderSidebar: $border_alt,
+  regularText: $font_color,
+  button: $primary_color,
+  highlight: $tint_color,
+  danger: $red_color,
+  iconColor: $icons_color,
+  dashboardBanner: $secondary_color,
+  dashboardBannerText: white,
+  boderCard : $border_card,
+  grayText : gray,
+)

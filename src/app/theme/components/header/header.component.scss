@@ -1,0 +1,25 @@
+@import "../../styles/styles";
+
+
+@include themify() {
+
+  .main-logo {
+    content: themed('mainLogo');
+  }
+
+  .header-component {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 25px;
+    transition: background-color 0.2s, border-bottom-color 0.2s, color 0.2s;
+    color: themed("regularText");
+    background-color: themed('background');
+    border-bottom: 1px solid themed('borderSidebar');
+  }
+}
+

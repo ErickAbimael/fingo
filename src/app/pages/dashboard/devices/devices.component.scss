@@ -1,0 +1,237 @@
+@import "../../../theme/styles/styles";
+
+@include themify(){
+  color: themed('regularText');
+
+  .DV-absolute-banner{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: themed('backgroundLayout');
+  }
+
+  .DV-content-banner {
+    position: relative;
+    width: 90%;
+    height: 100%;
+    left: 66px;
+  }
+
+  .DV-title-text{
+    color: themed(regularText);
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .DV-header-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15%;
+  }
+
+  .DV-header-title-container{
+    width: 70%;
+    height: 100%;
+    padding: 30px;
+  }
+
+  .DV-header-buttons{
+    justify-content: flex-end;
+    display: flex;
+    width: 30%;
+    height: 100%;
+    flex-direction: row;
+    padding-right: 20px;
+  }
+
+  .DV-button-container{
+    width: 30%;
+    height: 30%;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+
+  .DV-export-button{
+    height: 100%;
+    width: 100%;
+    border: 1px solid themed(border);
+    border-radius: 25px;
+    transition: 0.8s;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .DV-export-button:focus{
+    outline:0;
+  }
+  .DV-export-button:hover{
+    color: white;
+    background: lightgray;
+  }
+
+  .DV-add-button-container{
+    width: 44%;
+    height: 30%;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+
+  .DV-add-button{
+    height: 100%;
+    width: 100%;
+    border: 1px solid themed(button);
+    border-radius: 25px;
+    transition: 0.8s;
+    color: #FFFFFF;
+    background-color: themed(button);
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .DV-add-button:focus{
+    outline: 0;
+  }
+  .DV-add-button:hover{
+    background-color: white;
+    color: black;
+  }
+
+  .DV-fix-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 625px;
+    padding: 75px  350px;
+    background-color: rgba(#292b2c,0.5);
+  }
+
+  .DV-fix-container-center{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 625px;
+    padding: 220px 450px;
+    background-color: rgba(#292b2c, 0.5);
+  }
+
+  #deviceCreated{
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+
+  #deviceCreated.show{
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  #deviceEdited{
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+
+  #deviceEdited.show{
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  #deviceDeleted{
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+
+  #deviceDeleted.show{
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+  .loader {
+    position: absolute;
+    z-index: 100;
+    top: 300px;
+    left: 700px;
+    width: 48px;
+    height: 48px;
+    border: 5px solid #F68827;
+    border-bottom-color: #06B2BC;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+}

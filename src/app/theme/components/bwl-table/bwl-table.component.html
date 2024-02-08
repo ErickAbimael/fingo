@@ -1,0 +1,29 @@
+
+    <div class="table" *ngIf="dataSource?.length > 0 && columnDef">
+      <div class="head-table-style d-flex justify-content-space-between ">
+        <div class="head-item" [ngClass]="{'head-item-flex-1': !item.width}" *ngFor="let item of columnDef" [style.width.px]="item.width">
+          {{item.title}}
+        </div>
+        <div class="buttons-container"></div>
+      </div>
+      <div class="body-table-style">
+        <div *ngFor="let item of dataSource; let i = index;" class="table-row-item d-flex justify-content-space-between">
+          <ng-container  *ngFor="let element of columnDef">
+            <div *ngIf="!element.groupField" class="table-cell-item" [ngClass]="{'table-cell-item-flex-1': !element.width}"  [style.width.px]="element.width" [innerHTML]="element.cellRenderer ? element.cellRenderer(item[element.field], item) :item[element.field]">
+            </div >
+
+            <div *ngIf="element.groupField" class="table-cell-item arrow-expand" [ngClass]="{'table-cell-item-flex-1': !element.width}"  [style.width.px]="element.width"  (click)="showTableDetail(item, i)">
+              <div class="table-row-detail animated tableDetailEntry" *ngIf="item.expanded">
+                <div #componentFactory ></div>
+              </div>
+            </div>
+          </ng-container>
+          <div class="buttons-container">
+            <button class="buttons-style flap-i fg-e914"
+             (click)="openEditBusiness(i)"></button>
+            <button class="buttons-style flap-i fg-e915"
+            (click)="openDeleteBusiness(i)"></button>
+          </div>
+        </div>
+      </div>
+    </div>

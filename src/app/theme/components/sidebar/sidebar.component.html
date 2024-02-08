@@ -1,0 +1,24 @@
+<div [ngClass]="expand ? 'sidebar expand' : 'sidebar'">
+  <ul class="sidebar-list">
+    <img alt class="log-container" src="../../../../assets/img/logo.png" height="18%"/>
+    <li *ngFor="let item of menuCollection">
+      <a (click)="performSelection(item)">
+        <i class="menu-item-icon" [ngClass]="item.active ? item.icon + ' active-item active-item-font' : item.icon"  ></i>
+        <span class="title-item" [ngClass]="item.active ? 'active-item-font':''">{{item.title}}</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="sidebar-bottom">
+
+      <button (click)="logout()" class="open-sidebar ">
+        <i class="icon-expander flap-i fg-e917 fg-2x"></i>
+      </button>
+
+    <button (click)="collapseSidebar()" class="open-sidebar">
+      <i class="icon-expander flap-i fg-e904 fg-2x" [ngClass]="expand ? 'rotate-chevron' : ''"></i>
+    </button>
+
+  </div>
+
+</div>

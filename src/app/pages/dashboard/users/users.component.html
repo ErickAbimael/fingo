@@ -1,0 +1,64 @@
+<!--US = Users-->
+<div class="US-dashboard-absolute-bg-banner">
+
+  <div class="US-dashboard-content-banner">
+    <div class="US-header-container">
+
+      <div class="US-header-title-container">
+
+        <label class="US-title-text">Usuarios</label>
+
+      </div>
+
+      <div class="US-header-buttons-container">
+
+        <div class="US-add-button-container">
+
+          <button (click)="onAddNewUser()" class="US-add-user-button">
+             + Agregar usuario
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="height-20 width-20">
+
+      <fg-table-component
+        [dataSource]="dataSource"
+        [columnDef]="columnToFill"
+        (isEditBusinessShowing)="onOpenEditUserWindow()"
+        (isDeleteBusinessShowing)="onOpenDeleteUserWindow()"
+      ></fg-table-component>
+    </div>
+
+</div>
+
+  <div *ngIf="isAddUserModalShowing" class="US-fix-container animated fadeIn">
+    <fg-add-user-card
+    (onCloseModal)="onCloseAddUserModal()"
+    (onCreateUser)="onUserCreated()"
+    ></fg-add-user-card>
+  </div>
+
+  <div *ngIf="isEditUserModalShowing" class="US-fix-container animated fadeIn">
+    <fg-edit-user-card
+      (onCloseModal)="onCloseEditUserModal()"
+      (onEditUser)="onEditedUser()"
+    ></fg-edit-user-card>
+  </div>
+
+  <div *ngIf="isDeleteUserModalShowing" class="US-fix-container-center animated fadeIn">
+    <fg-delete-user-card
+      (onCloseWindow)="onCloseDeleteUserModal()"
+      (onDeleteUser)="onDeletedUser()"
+    ></fg-delete-user-card>
+  </div>
+
+  <div id="snackbarCreate">Usuario creado con éxíto</div>
+  <div id="snackbarEdited">Usuario editado con éxito</div>
+  <div id="snackbarDeleted">Usuario eliminado con éxito</div>
+
+</div>

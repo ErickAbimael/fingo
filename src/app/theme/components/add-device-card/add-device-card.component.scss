@@ -1,0 +1,222 @@
+@import "../../../theme/styles/styles";
+
+@include themify(){
+
+  .main-add-device-container{
+    height: 75%;
+    width: 50%;
+    border: 1px solid;
+    background: #FFFFFF;
+    border-radius: 9px;
+    position:fixed;
+  }
+
+  .AD-header{
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    width: 100%;
+    align-items: center;
+  }
+
+  .AD-exit-container{
+    height: 35px;
+    width: 35px;
+  }
+
+  .AD-exit-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid #DDDDDD;
+    color: #FFFFFF;
+    transform: rotate(45deg);
+    cursor: pointer;
+    font-size: 25px;
+  }
+
+  .AD-header-title-container{
+    width: 90%;
+    height: 100%;
+    padding-top: 15px;
+    padding-left: 20px;
+  }
+
+  .AD-title{
+    font-size: 15px;
+    color: #545454;
+    font-weight: bold;
+    padding-left: 16px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .AD-body{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .AD-body-title{
+    color: #545454;
+    font-size: 12px;
+    padding: 18px 34px 30px ;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .AD-input-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 22%;
+    padding-left: 34px;
+  }
+
+  .AD-input-text{
+    font-size: 12px;
+    padding-bottom: 8px;
+    padding-top: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: #343434;
+  }
+
+  .AD-input{
+    border-radius: 20px;
+    width: 90%;
+    height: 38px;
+    border: 1px solid #DDDDDD;
+    font-size: 12px;
+    padding-left: 10px;
+  }
+
+  .AD-double-input-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 22%;
+    padding-left: 34px;
+  }
+
+  .AD-small-input-container{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    padding-right: 10px;
+    border: 1px solid #DDDDDD;
+    border-radius: 20px;
+  }
+
+  .AD-small-input{
+    border-radius: 20px;
+    width: 80%;
+    height: 38px;
+    border: 1px solid #DDDDDD;
+    font-size: 12px;
+    padding-left: 10px;
+  }
+
+  .AD-phone-input-container{
+    width: 90%;
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #DDDDDD;
+    border-radius: 20px;
+    padding-left: 10px;
+  }
+
+  .AD-small-phone-input{
+    border-radius: 20px;
+    width: 90%;
+    height: 36px;
+    border: 0;
+    font-size: 12px;
+    padding-left: 10px;
+    outline: none;
+  }
+
+  .AD-selector-container{
+    width: 90%;
+    height: 55%;
+    display: flex;
+    padding-right: 10px;
+    border: 1px solid #DDDDDD;
+    border-radius: 20px;
+  }
+
+  .AD-selector{
+    border-radius: 20px;
+    width: 100%;
+    height: 36px;
+    outline: none;
+    border: 0;
+    font-size: 12px;
+    padding-left: 10px;
+    border-right: 8px solid transparent;
+  }
+
+  .AD-buttons-container{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 29%;
+    padding-left: 80px;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .AD-cancel-button{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ACACAC;
+    border-radius: 25px;
+    transition: 0.8s;
+    color: #545454;
+    background-color: white;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .AD-cancel-button:focus{
+    outline:0;
+  }
+  .AD-cancel-button:hover{
+    background-color: black;
+    color: white;
+  }
+
+  .AD-create-button{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    border: 1px solid #06B2BC;
+    background-color: #06B2BC;
+    color: white;
+    transition: 0.8s;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .AD-create-button:focus{
+    outline: 0;
+  }
+  .AD-create-button:hover{
+    background-color: white;
+    color: #06B2BC;
+  }
+
+  .isInvalid{
+    border-radius: 20px;
+    width: 90%;
+    height: 38px;
+    border: 1px solid red;
+    font-size: 12px;
+    padding-left: 10px;
+  }
+
+}

@@ -1,0 +1,22 @@
+@import "../theme/styles/styles";
+
+@include themify(){
+
+  .main-page-layout {
+
+    //padding: 0 0 0 50px;
+    transition: padding .15s,background-color 0.2s;
+    background-color: themed('backgroundLayout');
+    height: 100vh;
+  }
+  .collapse { padding: 0 0 0 150px; }
+
+  .container {
+    position: relative;
+    //padding: 12px;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+  }
+
+}

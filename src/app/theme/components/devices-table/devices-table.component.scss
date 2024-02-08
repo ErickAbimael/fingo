@@ -1,0 +1,143 @@
+@import "../../styles/styles";
+
+@include themify(true) {
+
+  //.table{
+  //  width: 100%;
+  //  height: 100%;
+  //  border: 1px solid;
+  //  background: #F68827;
+  //}
+  //bwl-table-component {
+  /*
+  *   Table styles - TODO: Convert into global styles
+  */
+
+
+  .DV-arrow-expand{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+    cursor: pointer;
+    img {
+      transition: all 0.2s ease-in ;
+    }
+  }
+
+
+  .DV-table {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+  }
+
+  .DV-head-table-style {
+    height: 35px;
+    width: 82%;
+    border-radius: 20px;
+    background: #FFFFFF;
+    display: flex;
+    flex-flow: row;
+    color: #ACACAC;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+
+    .DV-head-item {
+      display: flex;
+      height: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+    .DV-head-item-flex-1 {
+      flex: 1;
+    }
+  }
+
+  .DV-body-table-style {
+    font-size: 13px;
+    height: calc(100% - 35px);
+    background: #FFFFFF;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    .DV-table-row-item {
+      position: relative;
+      display: flex;
+      height: 46px;
+      transition: background-color 0.4s ease;
+      border-bottom: 1px solid rgba(themed('border'), 0.5);
+      .DV-table-cell-item {
+        display: flex;
+        padding-left: 20px;
+        padding-right: 20px;
+        align-items: center;
+        height: 100%;
+      }
+      .DV-table-cell-item-flex-1 {
+        flex: 1;
+      }
+    }
+    .DV-table-row-item:hover {
+      background-color: rgba(themed('border'), 0.5);
+    }
+
+    .DV-table-row-detail{
+      width: calc(100% - 1px);
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      top: 46px;
+      height: 100px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.1);
+      background: themed('background');
+    }
+  }
+
+  .DV-tableDetailEntry{
+    animation-duration: 0.4s;
+    -webkit-animation-name: DV-tableDetailEntry;
+    animation-name: DV-tableDetailEntry;
+  }
+
+  .DV-buttons-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .DV-buttons-style{
+    background-color: #F6882715;
+    color: #F68827;
+    border: 1px solid #F6882715;
+    width: 27px;
+    height: 27px;
+    border-radius: 3px;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+  }
+}
+  @keyframes DV-tableDetailEntry {
+    from {
+      height: 0;
+    }
+    to{
+      height: 100px;
+    }
+  }
+
+/**
+*   End of table styles
+**/
+//}

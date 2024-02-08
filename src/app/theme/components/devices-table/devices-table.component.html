@@ -1,0 +1,31 @@
+<!--DV = Devices-->
+<div class="DV-table" *ngIf="dataSource?.length > 0 && columnDef">
+  <div class="DV-head-table-style d-flex justify-content-space-between">
+    <div class="DV-head-item" [ngClass]="{'DV-head-item-flex-1': !item.width}" *ngFor="let item of columnDef" [style.width.px]="item.width">
+      {{item.title}}
+    </div>
+  </div>
+  <div class="DV-body-table-style">
+    <div *ngFor="let item of dataSource; let i = index;" class="DV-table-row-item d-flex justify-content-space-between">
+      <ng-container *ngFor="let element of columnDef">
+        <div *ngIf="!element.groupField" class="DV-table-cell-item" [ngClass]="{'DV-table-cell-item-flex-1': !element.width}" [style.width.px]="element.width" [innerHTML]="element.cellRenderer ? element.cellRenderer(item[element.field], item) : item[element.field]">
+        </div>
+
+        <div *ngIf="element.groupField" class="DV-table-cell-item DV-arrow-expand" [ngClass]="{'table-cell-item-flex-1': !element.width}" [style.width.px]="element.width" (click)="showTableDetail(item,i)">
+          <img alt src="../../../../assets/img/collapse_icon_gray.png" [style.transform]=" item.expanded ? 'rotate(0deg)' : 'rotate(-90deg)'">
+          <div class="DV-table-row-detail animated DV-tableDetailEntry" *ngIf="item.expanded">
+            <div #componentFactory ></div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="DV-buttons-container">
+        <button class="DV-buttons-style flap-i fg-e914"
+                (click)="openEditDevice()"></button>
+        <button class="DV-buttons-style flap-i fg-e915"
+                (click)="openDeleteDevice()"></button>
+        <button class="DV-buttons-style flap-i fg-e918"
+                ></button>
+      </div>
+    </div>
+  </div>
+</div>

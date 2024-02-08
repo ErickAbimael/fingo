@@ -1,0 +1,74 @@
+
+<div class="dasboard-absolute-bg-banner">
+  <label>No hay Empresas que mostrar</label>
+</div>
+<div class="dashboard-absolute-bg-banner">
+
+  <div class="dashboard-content-banner">
+    <div class="header-container">
+
+      <div class="header-title-container">
+
+        <label class="title-text">Empresas</label>
+
+      </div>
+
+      <div class="header-buttons-container">
+
+        <div class="add-button-container">
+
+          <button (click)="onAddNewBusiness()" class="add-client-button ">
+            + Agregar empresa
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="height-20 width-20">
+
+      <fg-table-component
+        [dataSource]="dataSource"
+        [columnDef]="columnToFill"
+        (isEditBusinessShowing)="onOpenNewWindow($event)"
+        (isDeleteBusinessShowing)="openDeleteComponent($event)"
+      ></fg-table-component>
+    </div>
+
+  </div>
+  <div *ngIf="isAddNewBusinessModalShowing" class="fix-container animated fadeIn">
+
+    <fg-new-business-card
+      (onCloseWindow)="onCloseNewWindow()"
+      (object)="onSendObject($event)"
+    ></fg-new-business-card>
+
+  </div>
+
+  <div *ngIf="isEditBusinessModalShowing" class="fix-container animated fadeIn">
+    <fg-edit-business-card
+      (onCloseWindow)="onCloseEditWindow()"
+      (object)="onUpdateBusiness($event)"
+      [dataSource]="infoToEdit"
+    ></fg-edit-business-card>
+  </div>
+
+  <div *ngIf="isDeleteBusinessModalShowing" class="fix-container-center animated fadeIn">
+    <fg-delete-business-card
+      (onCloseWindow)="onCloseDeleteWindow()"
+      (onDelete)="onDeleteBusiness()"
+    ></fg-delete-business-card>
+  </div>
+
+  <div id="businessCreated">La empresa ha sido creada con éxito</div>
+  <div id="businessEdited">La empresa ha sido editada con éxito</div>
+  <div id="businessDeleted">La empresa ha sido eliminada con éxito</div>
+  <div *ngIf="isLoading" class="fix-container-center"><span class="loader"></span></div>
+
+</div>
+
+<!----  Start building your layout below  -->
+
+

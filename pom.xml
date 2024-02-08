@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>mx.com.flap</groupId>
+  <artifactId>${artifact.name}</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+
+  <properties>
+    <artifact.name>fingo-web</artifact.name>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <npm.output.directory>dist\fingo-web</npm.output.directory>
+    <api.context>fingo-web/api</api.context>
+    <environment>--configuration=prepro</environment>
+    <base.href>--base-href=/fingo-web/</base.href>
+  </properties>
+
+  <build>
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+      <!-- Standard plugin to generate WAR -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.1.1</version>
+        <configuration>
+          <webResources>
+            <resource>
+              <directory>${npm.output.directory}</directory>
+            </resource>
+          </webResources>
+          <webXml>${basedir}/web.xml</webXml>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <executions>
+
+          <execution>
+            <id>ng build ${environment} ${base.href}</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>compile</phase>
+            <configuration>
+              <executable>ng</executable>
+              <arguments>
+                <argument>build</argument>
+                <!--<argument>&#45;&#45;prod</argument>-->
+                <!--<argument>&#45;&#45;configuration prepro</argument>-->
+                <argument>${environment}</argument>
+                <argument>${base.href}</argument>
+              </arguments>
+            </configuration>
+          </execution>
+
+        </executions>
+
+        <configuration>
+          <environmentVariables>
+            <CI>false</CI>
+            <NPM_CONFIG_PREFIX>${basedir}/npm</NPM_CONFIG_PREFIX>
+            <NPM_CONFIG_CACHE>${NPM_CONFIG_PREFIX}/cache</NPM_CONFIG_CACHE>
+            <NPM_CONFIG_TMP>${project.build.directory}/npmtmp</NPM_CONFIG_TMP>
+          </environmentVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+
+    <profile>
+      <id>prepro</id>
+      <properties>
+        <artifact.name>fingo-web</artifact.name>
+        <environment>--configuration=prepro</environment>
+        <base.href>--base-href=/fingo-web/</base.href>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>prod</id>
+      <properties>
+        <artifact.name>ROOT</artifact.name>
+        <environment>--configuration=production</environment>
+        <base.href>--base-href=/</base.href>
+      </properties>
+    </profile>
+
+  </profiles>
+</project>

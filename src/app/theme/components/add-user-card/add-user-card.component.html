@@ -1,0 +1,159 @@
+<div class="main-add-user-container">
+  <!--AU = "Add User"-->
+  <div class="AU-header">
+
+    <div class="AU-header-title-container">
+      <label class="AU-title">Nuevo Usuario</label>
+    </div>
+
+    <div class="AU-exit-container">
+      <button class="AU-exit-button flap-i fg-e900"
+              (click)="closeModal()"></button>
+    </div>
+  </div>
+
+  <div style="border: 1px solid #DDDDDD; width: 100%;"></div>
+
+  <div class="AU-body">
+
+    <label class="AU-body-title">Llena los siguientes datos para dar de alta al usuario</label>
+
+    <div class="AU-double-input-container">
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="AU-input-text">Nombre</label>
+
+        <input
+          (input)="getName($event)"
+          [ngClass]="{'isInvalid': nameIsEmpty, 'AU-small-input': !nameIsEmpty}"
+        />
+
+      </div>
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="AU-input-text">Apellido</label>
+
+        <input
+          (input)="getLastName($event)"
+          [ngClass]="{'isInvalid' : lastNameIsEmpty, 'AU-small-input' : !lastNameIsEmpty}"
+        />
+
+      </div>
+
+    </div>
+
+  <div class="AU-double-input-container">
+
+    <div class="w-50 h-100 d-flex" style="flex-direction: column">
+
+      <label class="AU-input-text">Usuario</label>
+
+        <input
+          (change)="handleChange($event)"
+          (input)="getUserName($event)"
+          [ngClass]="{'isInvalid' : userIsEmpty, 'AU-small-input' : !userIsEmpty}"
+        />
+
+    </div>
+
+    <div class="w-50 h-100 d-flex" style="flex-direction: column">
+
+      <label class="AU-input-text">Contraseña</label>
+
+      <input
+        (change)="handleChange($event)"
+        (input)="getPassword($event)"
+        [ngClass]="{'isInvalid' : passwordIsEmpty, 'AU-small-input' : !passwordIsEmpty}"
+      />
+
+    </div>
+
+    </div>
+
+    <div class="AU-double-input-container">
+
+      <div class="w-50 h-100 d-flex" style="flex-direction: column">
+
+        <label class="AU-input-text">Correo electronico</label>
+
+
+        <input
+          (change)="handleChange($event)"
+          (input)="getMail($event)"
+          [ngClass]="{'isInvalid' : mailIsEmpty, 'AU-small-input' : !mailIsEmpty}"
+        />
+
+      </div>
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="AU-input-text">Télefono</label>
+
+        <div class="AU-phone-input-container"
+             [ngClass]="{'isInvalid' : phoneIsEmpty, 'AU-small-phone-input-container' : !phoneIsEmpty}"
+        >
+          <img alt src="https://th.bing.com/th/id/R.d3fba8d3962a3b0b25d7398b669bd251?rik=wlLqMuFYYZ9whg&riu=http%3a%2f%2fimagenpng.com%2fwp-content%2fuploads%2f2015%2f09%2f1250168327.jpg&ehk=LXJnZPJp2mswCcGsxPXvLgsruydem8YzCW%2bJ44I5jg4%3d&risl=&pid=ImgRaw&r=0"
+               style="width: 25px; height: 15px; top:10px;">
+          <input
+            (change)="handleChange($event)"
+            (input)="getPhone($event)"
+            class="AU-small-phone-input"
+          />
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="AU-double-input-container">
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="AU-input-text">Empresa</label>
+
+        <div [ngClass]="{'isInvalid' : businessIsEmpty, 'AU-selector-container' : !businessIsEmpty}">
+
+          <select class="AU-selector" id="business" (click)="getBusinessValue($event)">
+            <option value="Minoni">Minoni</option>
+            <option value="Pizza Hut">Pizza Hut</option>
+            <option value="Little Caesars">Little Caesars</option>
+          </select>
+
+        </div>
+
+      </div>
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="AU-input-text">Rol</label>
+
+        <div [ngClass]="{'isInvalid' : roleIsEmpty, 'AU-selector-container' : !roleIsEmpty}">
+
+          <select class="AU-selector" (click)="getRole($event)">
+            <option value="a">Administrador</option>
+            <option value="b">Repartidor</option>
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="AU-buttons-container">
+
+      <div class="w-40 h-40">
+        <button (click)="closeModal()" class="AU-cancel-button">Cancelar</button>
+      </div>
+
+      <div class="w-40 h-40">
+        <button (click)="createUserClicked()" class="AU-create-button">Crear</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,84 @@
+<div class="main-add-device-container">
+  <!--AD = Add Device-->
+  <div class="AD-header">
+
+    <div class="AD-header-title-container">
+      <label class="AD-title">Nuevo Dispositivo</label>
+    </div>
+
+    <div class="AD-exit-container">
+      <button class="AD-exit-button flap-i fg-e900"
+              (click)="closeModal()"></button>
+    </div>
+  </div>
+
+  <div style="border: 1px solid #DDDDDD; width: 100%;"></div>
+
+  <div class="AD-body">
+    <label class="AD-body-title">Llena los siguientes datos para dar de alta al dispositivo</label>
+
+    <div class="AD-input-container">
+
+      <label class="AD-input-text">Elige una empresa</label>
+
+      <div [ngClass]="{'isInvalid' : nameIsEmpty, 'AD-selector-container' : !nameIsEmpty}">
+
+        <select class="AD-selector" (click)="getBusinessName($event)">
+          <option value = "Minoni">Minoni</option>
+          <option value = 'Little Caesars'>Little Caesars</option>
+        </select>
+
+      </div>
+
+    </div>
+
+    <div class="AD-double-input-container">
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="AD-input-text">Vehiculo</label>
+
+        <input
+          (input)="getVehicle($event)"
+          [ngClass]="{'isInvalid' : vehicleIsEmpty, 'AD-small-input' : !vehicleIsEmpty }"
+        />
+
+      </div>
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="AD-input-text">Modelo</label>
+
+        <input
+          (input)="getModel($event)"
+          [ngClass]="{'isInvalid' : modelIsEmpty, 'AD-small-input' : !modelIsEmpty }"
+        />
+
+      </div>
+
+    </div>
+
+    <div class="AD-double-input-container">
+      <div class="w-50 h-100 d-flex direction-column">
+        <label class="AD-input-text">UUID</label>
+        <input
+          (input)="getUUID($event)"
+          [ngClass]="{'isInvalid' : uuidIsEmpty, 'AD-small-input' : !uuidIsEmpty }"
+        />
+      </div>
+    </div>
+
+    <div class="AD-buttons-container">
+
+      <div class="w-40 h-40">
+        <button (click)="closeModal()" class="AD-cancel-button">Cancelar</button>
+      </div>
+
+      <div class="w-40 h-40">
+        <button (click)="createDeviceClicked()" class="AD-create-button">Crear</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>

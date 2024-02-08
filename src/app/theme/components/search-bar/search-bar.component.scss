@@ -1,0 +1,96 @@
+@import "../../../theme/styles/styles";
+
+@include themify() {
+
+  .searchbar-main-container{
+    width: 100%;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title-text{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+
+  }
+
+  .body-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 36px;
+    justify-content: space-between;
+  }
+
+  .search-input-container{
+    border-radius: 20px;
+  }
+
+  .searchbar-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background: #EEEFEF;
+    border-radius: 22px;
+    padding-right: 10px;
+    align-items: center;
+  }
+
+  .input-style{
+    width: 90%;
+    height: 36px;
+    background: #EEEFEF;
+    border-radius: 22px;
+    border: 1px solid #EEEFEF;
+    font-size: 12px;
+    padding-left: 10px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    outline: 0;
+  }
+
+  .filter-container{
+    display: flex;
+    flex-direction: row;
+    width: 28%;
+    height: 100%;
+    border-radius: 22px;
+    border: 1px solid #DDDDDD;
+    align-items: center;
+  }
+
+  .filter{
+    height: 100%;
+    width: 80%;
+    border: none;
+    border-radius: 18px;
+    transition: 0.8s;
+    color: black;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    font-size: 12px;
+  }filter:focus{outline: 0;}
+  filter:hover{
+    background-color: black;
+    color: white;
+  }
+
+  .filter-text{
+    font-size: 12px;
+    padding: 3px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .filter-logo{
+    font-size: 25px;
+    color: #06B2BC;
+    font-family: 'Montserrat', sans-serif;
+  }
+}

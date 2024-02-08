@@ -1,0 +1,104 @@
+@use "sass:math";
+
+@font-face {
+  font-family: 'fingoIcons';// Cambia el nombre por uno apropiado
+  src:  url('../../../assets/fonts/icomoon.eot?9ppxus');
+  src:  url('../../../assets/fonts/icomoon.eot?9ppxus#iefix') format('embedded-opentype'),
+  url('../../../assets/fonts/icomoon.woff2?9ppxus') format('woff2'),
+  url('../../../assets/fonts/icomoon.ttf?9ppxus') format('truetype'),
+  url('../../../assets/fonts/icomoon.woff?9ppxus') format('woff'),
+  url('../../../assets/fonts/icomoon.svg?9ppxus#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.flap-i {// Cambia el nombre por uno apropiado
+  display: inline-block;
+  font-family: 'fingoIcons'!important;// Cambia el nombre por uno apropiado
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // --------------
+  // Icons sizes
+  // --------------
+  &.fg-lg {
+    font-size: 1.33333333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+  }
+  &.fg-1x {
+    font-size: 1.1em;
+  }
+  &.fg-2x {
+    font-size: 2em;
+  }
+  &.fg-3x {
+    font-size: 3em;
+  }
+  &.fg-4x {
+    font-size: 4em;
+  }
+  &.fg-5x {
+    font-size: 5em;
+  }
+  &.fg-fw {
+    width: 1.28571429em;
+    text-align: center;
+  }
+
+  // -------------
+  // Icons classes
+  // -------------
+  @function dec-to-hex($d) {
+    $hexVals: "a" "b" "c" "d" "e" "f";
+    $base: 16;
+    $quotient: $d;
+    $result: "";
+    @if $d == 0 {
+      $result: "00";
+    }
+    @while $quotient != 0 {
+      $mod: $quotient % $base;
+      $quotient: floor(math.div($quotient, $base));
+      @if $mod > 9 {
+        $mod: nth($hexVals, $mod - 9);
+      }
+      @if $d < $base {
+        $result: "0" + $mod;
+      } @else {
+        $result: $mod + $result;
+      }
+    }
+    @return $result;
+  }
+
+  // hex e900 its dec is 59648
+  $iconFrom: 59648;
+
+  //
+  // Dear Developer :),
+  //
+  // If there are more icons just increment
+  // the "$currentFontIcons" variable.
+  // ----------------------
+  $currentFontIcons: 31;//
+  // ----------------------
+  // With love <3
+  // Another developer.
+
+  $iconThrough: $iconFrom + $currentFontIcons;
+  @for $i from $iconFrom through $iconThrough {
+    $tmpHex: dec-to-hex($i);
+    $currentContent: unquote("\"\\#{$tmpHex}\"");
+
+    &.fg-#{$tmpHex}:before {content: $currentContent;}
+  }
+}

@@ -1,0 +1,27 @@
+<div class="searchbar-main-container">
+
+  <div class="d-flex flex direction-row align-items-center padding-5px">
+
+    <span class="title-text">{{data.title}}</span>
+
+  </div>
+
+  <div class="body-container">
+
+    <div class="searchbar-container">
+
+      <input
+            [type]="type"
+            [ngClass]="hasError ? 'error' : ''"
+            [autocomplete]="autocomplete"
+            [name]="name"
+            [placeholder]=data.place
+            (change)="handleChange($event)"
+            class="flap-i fg-e90d input-style"
+
+      />
+      <div class="flap-i fg-e90d fg-2x" style="color: #ADAFAF"></div>
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,33 @@
+<div class="main-delete-business-container">
+  <!-- dl = "delete" -->
+  <div class="dl-header">
+
+    <div class="w-90 h-100" style="padding-top: 15px; padding-left: 20px">
+      <label class="dl-title">Eliminar Empresa</label>
+    </div>
+
+    <div class="dl-exit-container">
+      <button class="dl-exit-button flap-i fg-e900"
+              (click)="closeWindow()"></button>
+    </div>
+  </div>
+
+  <div style="border: 1px solid #DDDDDD; width: 100%"></div>
+
+  <div class="dl-body">
+
+    <label class="dl-body-title">¿Estás seguro que deseas eliminar la empresa?</label>
+    <label class="dl-body-text">No se podrá recuperar los datos</label>
+
+    <div class="h-10"></div>
+    <div class="dl-buttons-container">
+
+      <div class="w-40 h-50">
+        <button (click)="closeWindow()" class="dl-cancel-button">Cancelar</button>
+      </div>
+      <div class="w-40 h-50">
+        <button (click)="deleteClicked()" class="delete-button">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import "app/theme/styles/iconsTheme";
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.ag-theme-material .ag-header {
+  border-bottom: 4px solid #eeeef4 !important;
+}
+
+.ag-theme-material .ag-row {
+  border-style: unset !important;
+  border-color: unset !important;
+  border-width: unset !important;
+  border-bottom: 2px solid #eeeef4 !important;
+}
+
+.ag-header-cell-label .ag-header-cell-text {
+  color: #001d53;
+}

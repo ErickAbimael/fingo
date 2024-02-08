@@ -1,0 +1,124 @@
+<div class="main-new-business-container">
+<!-- nb = "new business -->
+  <div class="nb-header">
+
+    <div class="w-90 h-100" style="padding-top: 15px; padding-left: 20px">
+      <label class="ed-title">Nueva Empresa</label>
+    </div>
+
+    <div class="nb-exit-container">
+      <button class="nb-exit-button flap-i fg-e900 "
+      (click)="closeIt($event)"></button>
+    </div>
+
+  </div>
+
+  <div style="border: 1px solid #DDDDDD; width: 100%"></div>
+
+  <div class="nb-body">
+
+    <label class="nb-body-title">Llena los siguientes datos para dar de alta el cliente</label>
+
+    <div class="nb-input-container">
+
+      <label class="nb-input-text" >Nombre comercial</label>
+
+      <input
+        (change)="handleChange($event)"
+        (input)="getStoreName($event)"
+        [ngClass]="{'isInvalid' : storeIsEmpty, 'nb-input' : !storeIsEmpty}"
+      />
+
+    </div>
+
+
+
+    <div class="nb-input-container">
+
+      <label class="nb-input-text" >Razón Social</label>
+
+      <input
+        (change)="handleChange($event)"
+        (input)="getSocialReason($event)"
+        [ngClass]="{'isInvalid' : reasonIsEmpty, 'nb-input' : !reasonIsEmpty}"
+      />
+
+    </div>
+
+    <div class="nb-input-container">
+
+      <label class="nb-input-text" >Dirección</label>
+
+      <input
+        (change)="handleChange($event)"
+        (input)="getAddress($event)"
+        [ngClass]="{'isInvalid' : addressIsEmpty, 'nb-input' : !addressIsEmpty}"
+      />
+
+    </div>
+
+    <div class="nb-double-input-container">
+
+
+      <div class="w-50 h-100 d-flex" style="flex-direction: column">
+
+        <label class="nb-input-text" >Télefono</label>
+
+        <div
+          [ngClass]="{'isInvalid-phone' : phoneIsEmpty, 'nb-phone-input-container' : !phoneIsEmpty}">
+          <img alt src="https://th.bing.com/th/id/R.d3fba8d3962a3b0b25d7398b669bd251?rik=wlLqMuFYYZ9whg&riu=http%3a%2f%2fimagenpng.com%2fwp-content%2fuploads%2f2015%2f09%2f1250168327.jpg&ehk=LXJnZPJp2mswCcGsxPXvLgsruydem8YzCW%2bJ44I5jg4%3d&risl=&pid=ImgRaw&r=0"
+               style="width: 25px; height: 15px; top:10px;">
+          <input
+            (change)="handleChange($event)"
+            (input)="getPhone($event)"
+            class="nb-phone-input"
+          />
+        </div>
+
+      </div>
+
+      <div class="w-50 h-100 d-flex" style="flex-direction: column">
+
+        <label class="nb-input-text">Tipo</label>
+
+        <div [ngClass]="{'isInvalid-selector':typeVIsEmpty, 'nb-selector-container':!typeVIsEmpty}">
+          <select
+            class="nb-selector"
+            (click)="getTypeValue($event)">
+              <option value="Restaurante">Restaurante</option>
+              <option value="Transporte">Transporte</option>
+          </select>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="nb-input-container">
+
+      <label class="nb-input-text" >Contacto principal</label>
+
+      <input
+        (change)="handleChange($event)"
+        (input)="getMainContact($event)"
+        [ngClass]="{'isInvalid' : contactIsEmpty, 'nb-input' : !contactIsEmpty}"
+      />
+
+    </div>
+
+    <div class="nb-buttons-container">
+
+      <div class="w-40 h-40">
+        <button (click)="closeIt($event)" class="nb-cancel-button">Cancelar</button>
+      </div>
+
+      <div class="w-40 h-40">
+        <button (click)="createClicked()" class="nb-create-button">Crear</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

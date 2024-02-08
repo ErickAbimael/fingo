@@ -1,0 +1,157 @@
+<div class="main-edit-user-container">
+  <!--EU = "Edit User-->
+  <div class="EU-header">
+
+    <div class="EU-header-title-container">
+      <label class="EU-title">Editar Usuario</label>
+    </div>
+
+    <div class="EU-exit-container">
+      <button class="EU-exit-button flap-i fg-e900"
+              (click)="closeModal()"></button>
+    </div>
+  </div>
+
+  <div style="border: 1px solid #DDDDDD; width: 100%;"></div>
+
+  <div class="EU-body">
+
+    <label class="EU-body-title">Llena los siguientes datos para editar al usuario</label>
+
+    <div class="EU-double-input-container">
+
+      <div class="d-flex w-50 h-100 direction-column">
+
+        <label class="EU-input-text">Nombre</label>
+
+        <input
+          [(ngModel)]="dataSource"
+          class="EU-small-input"/>
+      </div>
+
+      <div class="h-100 w-50 d-flex direction-column">
+
+        <label class="EU-input-text">Apellido</label>
+
+        <input
+
+          class="EU-small-input"
+        />
+
+      </div>
+
+      </div>
+
+    <div class="EU-double-input-container">
+
+      <div class="w-50 h-100 d-flex" style="flex-direction: column">
+
+        <label class="EU-input-text">Usuario</label>
+
+          <input
+
+            class="EU-small-input"
+          />
+
+      </div>
+
+      <div class="d-flex w-50 h-100 direction-column">
+
+        <label class="EU-input-text">Contraseña</label>
+
+        <input
+
+          class="EU-small-input"/>
+
+      </div>
+
+
+
+    </div>
+
+    <div class="EU-double-input-container">
+
+      <div class="w-50 h-100 d-flex" style="flex-direction: column">
+
+        <label class="EU-input-text">Correo electronico</label>
+
+        <div class="">
+
+          <input
+
+            class="EU-small-input"
+          />
+
+        </div>
+
+      </div>
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="EU-input-text">Télefono</label>
+
+        <div class="EU-phone-input-container">
+          <img alt src="https://th.bing.com/th/id/R.d3fba8d3962a3b0b25d7398b669bd251?rik=wlLqMuFYYZ9whg&riu=http%3a%2f%2fimagenpng.com%2fwp-content%2fuploads%2f2015%2f09%2f1250168327.jpg&ehk=LXJnZPJp2mswCcGsxPXvLgsruydem8YzCW%2bJ44I5jg4%3d&risl=&pid=ImgRaw&r=0"
+               style="width: 25px; height: 15px; top:10px;">
+          <input
+
+            class="EU-small-phone-input"
+          />
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+    <div class="EU-double-input-container">
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="EU-input-text">Empresa</label>
+
+        <div class="EU-selector-container">
+
+          <select class="EU-selector" >
+            <option value="Minoni">Minoni</option>
+            <option value="Pizza Hut">Pizza Hut</option>
+            <option value="Little Caesars">Little Caesars</option>
+          </select>
+
+        </div>
+
+      </div>
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="EU-input-text">Rol</label>
+
+        <div class="EU-selector-container">
+
+          <select class="EU-selector" >
+            <option value="a">Administrador</option>
+            <option value="b">Repartidor</option>
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="EU-buttons-container">
+
+      <div class="w-40 h-40">
+        <button (click)="closeModal()" class="EU-cancel-button">Cancelar</button>
+      </div>
+
+      <div class="w-40 h-40">
+        <button (click)="onEditClicked()" class="EU-create-button">Editar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

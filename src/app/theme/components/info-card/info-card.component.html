@@ -1,0 +1,50 @@
+<div class="info-main-container">
+
+  <div class="d-flex direction-row justify-content-space-between margin-bottom-10">
+    <span class="body-txt">{{info?.number}}</span>
+    <div class="status">
+      <label class="status-txt">{{info?.status}}</label>
+    </div>
+  </div>
+
+  <div class="w-90 d-flex direction-row justify-content-space-between margin-bottom-10">
+
+    <div class="d-flex direction-column justify-content-center">
+      <span class="title-gray-txt">Empresa</span>
+      <span class="body-txt">{{info?.business}}</span>
+    </div>
+
+    <div class="d-flex direction-column justify-content-center">
+      <span class="title-gray-txt">REPARTIDOR</span>
+      <span class="body-txt">{{info.user}}</span>
+    </div>
+
+    <div class="d-flex direction-column justify-content-center">
+      <span class="title-gray-txt"></span>
+      <span class="body-txt"></span>
+    </div>
+
+  </div>
+
+  <div class="d-flex direction-column">
+
+    <div class="container-origin">
+
+      <div class="d-flex direction-column">
+        <span class="pointer">●</span>
+        <div class="pointer-line"></div>
+        <span class="pointer">◌</span>
+      </div>
+
+      <div class="destiny">
+        <span class="title-gray-txt">ORIGEN</span>
+        <span class="body-txt">{{info.destiny}}</span>
+        <span class="destiny-txt">DESTINO</span>
+      </div>
+
+    </div>
+
+    <span class="body-txt">{{info.address}}</span>
+
+  </div>
+</div>

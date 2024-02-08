@@ -1,0 +1,32 @@
+<div class="map-container">
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <agm-overlay *ngFor="let m of dataSource" [latitude]="m.location_latitude" [longitude]="m.location_length">
+      <div class="marker">
+        <img alt
+             src="https://linkempleo.co/wp-content/uploads/2021/05/retrato-sonriente-conductor-furgoneta_53419-6444.jpg"
+             class="image">
+      </div>
+    </agm-overlay>
+  </agm-map>
+    <div class="main-container-business">
+      <fg-search-bar
+        [data]="data"
+        (value)="onSearching($event)"
+      ></fg-search-bar>
+      <div class="result-container">
+        <label class="result-text">{{bodyCard.length}} resultados</label>
+      </div>
+      <div class="scroll-hidden">
+        <fg-information-card *ngFor="let d of bodyCard"
+                             [number]="d.number"
+                             [business]="d.business"
+                             [user]="d.user"
+                             [client]="d.client"
+                             [status]="d.status"
+                             [destiny]="d.destiny"
+                             [address]="d.address"
+        ></fg-information-card>
+      </div>
+
+    </div>
+</div>

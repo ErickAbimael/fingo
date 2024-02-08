@@ -1,0 +1,33 @@
+<div class="main-delete-user-container">
+  <!-- DU = "Delete User" -->
+  <div class="DU-header">
+
+    <div class="w-90 h-100" style="padding-top: 15px; padding-left: 20px">
+      <label class="DU-title">Eliminar Usuario</label>
+    </div>
+
+    <div class="DU-exit-container">
+      <button class="DU-exit-button flap-i fg-e900"
+              (click)="closeWindow()"></button>
+    </div>
+  </div>
+
+  <div style="border: 1px solid #DDDDDD; width: 100%"></div>
+
+  <div class="DU-body">
+
+    <label class="DU-body-title">¿Estás seguro que deseas eliminar al Usuario?</label>
+    <label class="DU-body-text">No se podrá recuperar los datos</label>
+
+    <div class="h-10"></div>
+    <div class="DU-buttons-container">
+
+      <div class="w-40 h-50">
+        <button (click)="closeWindow()" class="DU-cancel-button">Cancelar</button>
+      </div>
+      <div class="w-40 h-50">
+        <button (click)="deleteClicked()" class="delete-user-button">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>

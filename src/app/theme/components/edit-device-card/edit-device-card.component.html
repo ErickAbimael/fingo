@@ -1,0 +1,78 @@
+<div class="main-edit-device-container">
+  <!--ED = Edit Device-->
+  <div class="ED-header">
+
+    <div class="ED-header-title-container">
+      <label class="ED-title">Editar Dispositivo</label>
+    </div>
+
+    <div class="ED-exit-container">
+      <button class="ED-exit-button flap-i fg-e900"
+              (click)="onExit()"></button>
+    </div>
+  </div>
+
+  <div style="border: 1px solid #DDDDDD; width: 100%;"></div>
+
+  <div class="ED-body">
+    <label class="ED-body-title">Llena los siguientes datos para dar de alta al dispositivo</label>
+
+    <div class="ED-input-container">
+
+      <label class="ED-input-text">Nombre de la empresa</label>
+
+      <div class="ED-selector-container">
+        <select class="ED-selector" [(ngModel)]="dataToFill[0].nameDistribution">
+          <option value="Minoni">Minoni</option>
+          <option value="Little Caesars">Little Caesars</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="ED-double-input-container">
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="ED-input-text">Vehiculo</label>
+
+        <input
+          [(ngModel)]="dataToFill[0].descriptionVehicle"
+          class="ED-small-input"/>
+
+      </div>
+
+      <div class="w-50 h-100 d-flex direction-column">
+
+        <label class="ED-input-text">Modelo</label>
+
+        <input
+          [(ngModel)]="dataToFill[0].keyCode"
+          class="ED-small-input"/>
+
+      </div>
+
+    </div>
+
+    <div class="ED-double-input-container">
+      <div class="w-50 h-100 d-flex direction-column">
+        <label class="ED-input-text">UUID</label>
+        <input
+          [(ngModel)]="dataToFill[0].locationUuid"
+          class="ED-small-input">
+      </div>
+    </div>
+
+    <div class="ED-buttons-container">
+
+      <div class="w-40 h-40">
+        <button (click)="onExit()" class="ED-cancel-button">Cancelar</button>
+      </div>
+
+      <div class="w-40 h-40">
+        <button (click)="onEditClicked()" class="ED-create-button">Editar</button>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+@import "../../../theme/styles/styles";
+
+@include themify(){
+
+  .map-travel-container{
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+  }
+
+  .w-info{
+    width: 20px;
+    height: 100px;
+  }
+
+  .main-travel-container{
+    height: 96%;
+    width: 470px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    position: absolute;
+    margin-top: -615px;
+    z-index: 6;
+    left: 60px;
+  }
+
+  agm-map{
+    height: 100%;
+  }
+
+  .result{
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+    padding: 5px 20px;
+  }
+
+  .result-txt{
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .overlay-marker{
+    border: 3px solid red;
+    border-radius: 100px 100px 100px 0;
+    rotate: -42deg;
+    width: 50px;
+    height: 50px;background: red
+  }
+
+}

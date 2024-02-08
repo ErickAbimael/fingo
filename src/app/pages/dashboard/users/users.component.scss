@@ -1,0 +1,220 @@
+@import "../../../theme/styles/styles";
+
+@include themify(){
+  color: themed('regularText');
+
+  .US-dashboard-absolute-bg-banner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: themed('backgroundLayout');
+  }
+  .US-dashboard-content-banner {
+    position: relative;
+    width: 90%;
+    height: 100%;
+    left: 66px;
+  }
+
+  .US-title-text{
+    color: themed(regularText);
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .US-header-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15%;
+  }
+
+  .US-header-title-container{
+    width: 70%;
+    height: 100%;
+    padding: 30px;
+  }
+
+  .US-header-buttons-container{
+    justify-content: flex-end;
+    padding-right: 20px;
+    display: flex;
+    width: 30%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .US-button-container{
+    width: 30%;
+    height: 30%;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+
+  .US-add-button-container{
+    display: flex;
+    width: 38%;
+    height: 30%;/*
+    margin-top: 30px;
+    margin-left: 20px;*/
+  }
+
+  .US-export-button{
+    width: 100%;
+    height: 100%;
+    border: 1px solid themed(border);
+    border-radius: 25px;
+    transition: 0.8s;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .US-export-button:focus{
+    outline:0;
+  }
+  .US-export-button:hover{
+    background: lightsteelblue;
+    color: white;
+  }
+
+  .US-add-user-button{
+    display: flex;
+    transition: 0.8s;
+    height: 100%;
+    width: 100%;
+    border: 1px solid themed(button);
+    border-radius: 25px;
+    color: white;
+    background-color: themed(button);
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    justify-content: center;
+  }
+  .US-add-user-button:focus{
+    outline:0;
+  }
+  .US-add-user-button:hover{
+    background-color: white;
+    color: black;
+  }
+
+  .US-fix-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 625px;
+    padding: 60px  350px;
+    background-color: rgba(#292b2c,0.5);
+  }
+
+  .US-fix-container-center{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 625px;
+    padding: 220px 450px;
+    background-color: rgba(#292b2c, 0.5);
+  }
+
+  /* The snackbar - position it at the bottom and in the middle of the screen */
+  #snackbarCreate {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbarCreate.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  #snackbarEdited {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbarEdited.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  #snackbarDeleted {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbarDeleted.show {
+    visibility: visible; /* Show the snackbar */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+}
